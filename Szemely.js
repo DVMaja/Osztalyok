@@ -17,6 +17,23 @@ class Szemely {
     <p>${this.kor()}
     </div>
     `);
+
+    /**Elnevezem a html elemet is */
+    this.szemelyELEM = $(".szemely:last-child");
+    //console.log(this.szemelyELEM);
+    console.log(this);//objektum pédányra kel mutatnia [this = objektum pédány]
+    
+
+    this.szemelyELEM.on("click", function(){
+        console.log(this);/**function esetén a this azt a HTML elemet jelenti, ami a
+         kiválasztotta az eseményt event.targetet jelenti*/
+    })
+
+    this.szemelyELEM.on("click", () =>{
+        console.log(this);/**nyil függvény esetén  a this a konkrét objektumot példányt jelent*/
+    })
+
+
   }
 
   /**Privát adatagokat csak ezen keresztűl érhetek el */
